@@ -1,7 +1,7 @@
 import Quill from 'quill'
 import DOMPurify from 'dompurify';
 
-const List = Quill.import('formats/List');
+const List = Quill.import('formats/list');
 
 class WinkList extends List {
     static create(value) {
