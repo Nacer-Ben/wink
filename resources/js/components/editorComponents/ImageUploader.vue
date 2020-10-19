@@ -86,7 +86,7 @@
         <preloader v-if="uploading"></preloader>
 
         <div v-if="imageUrl && !uploading">
-            <img :src="imageUrl" class="max-w-full">
+            <img :src="imageUrl" class="max-w-full mx-auto">
 
             <div class="input-group">
                 <label class="input-label">Caption</label>
