@@ -8,6 +8,7 @@
     import HTMLBlot from './editorComponents/HTMLBlot.js';
     import WinkClipboard from './editorComponents/WinkClipboard.js';
     import WinkLink from './editorComponents/WinkLink.js';
+    import WinkList from './editorComponents/WinkList.js';
     import Parchment from 'parchment';
 
     export default {
