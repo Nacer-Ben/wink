@@ -8,7 +8,7 @@
     import HTMLBlot from './editorComponents/HTMLBlot.js';
     import WinkClipboard from './editorComponents/WinkClipboard.js';
     import WinkLink from './editorComponents/WinkLink.js';
-    import WinkList from './editorComponents/WinkList.js';
+   // import WinkList from './editorComponents/WinkList.js';
     import Parchment from 'parchment';
 
     export default {
@@ -70,7 +70,6 @@
                 Quill.register(WinkDividerBlot, true);
                 Quill.register(HTMLBlot, true);
                 Quill.register(WinkLink, true);
-                Quill.register(WinkList, true);
                 Quill.register('modules/clipboard', WinkClipboard, true)
 
                 icons = Quill.import('ui/icons');
