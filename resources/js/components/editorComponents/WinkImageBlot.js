@@ -37,6 +37,6 @@ class WinkImageBlot extends BlockEmbed {
 
 WinkImageBlot.tagName = 'div';
 WinkImageBlot.blotName = 'captioned-image';
-WinkImageBlot.className = 'embedded_image mx-auto text-center';
+WinkImageBlot.className = ['embedded_image', 'mx-auto', 'text-center'];
 
 export default WinkImageBlot;
