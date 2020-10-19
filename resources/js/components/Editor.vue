@@ -69,6 +69,7 @@
                 Quill.register(WinkDividerBlot, true);
                 Quill.register(HTMLBlot, true);
                 Quill.register(WinkLink, true);
+                Quill.register(WinkList, true);
                 Quill.register('modules/clipboard', WinkClipboard, true)
 
                 icons = Quill.import('ui/icons');

@@ -12,6 +12,7 @@ class WinkImageBlot extends BlockEmbed {
 
         img.setAttribute('alt', value.caption);
         img.setAttribute('src', value.url);
+        img.setAttribute('class', 'mx-auto');
         node.appendChild(img);
 
         if (value.caption) {
@@ -36,6 +37,6 @@ class WinkImageBlot extends BlockEmbed {
 
 WinkImageBlot.tagName = 'div';
 WinkImageBlot.blotName = 'captioned-image';
-WinkImageBlot.className = 'embedded_image';
+WinkImageBlot.className = 'embedded_image mx-auto text-center';
 
 export default WinkImageBlot;
