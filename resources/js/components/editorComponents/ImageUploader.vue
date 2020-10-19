@@ -81,7 +81,7 @@
 
 <template>
     <modal v-if="modalShown" @close="close">
-        <h2 class="font-semibold mb-5">Add Image</h2>
+        <h2 class="font-semibold mb-5">Add An Image</h2>
 
         <preloader v-if="uploading"></preloader>
 
