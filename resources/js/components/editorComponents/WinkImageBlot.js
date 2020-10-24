@@ -18,7 +18,7 @@ class WinkImageBlot extends BlockEmbed {
         if (value.caption) {
             let caption = document.createElement('p');
             caption.innerHTML = value.caption;
-            caption.setAttribute('class', 'text-center');
+            caption.setAttribute('class', 'text-center text-gray-500 italic');
             node.appendChild(caption);
         }
 
