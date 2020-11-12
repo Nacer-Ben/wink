@@ -40,10 +40,9 @@ class CreateTables extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-
-
+        
         Schema::create('wink_posts', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id');
             $table->string('slug')->unique();
             $table->string('title');
             $table->text('excerpt');
@@ -58,7 +57,7 @@ class CreateTables extends Migration
         });
 
         Schema::create('wink_pages', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id');
             $table->string('slug')->unique();
             $table->string('title');
             $table->text('body');
