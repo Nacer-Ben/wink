@@ -29,6 +29,19 @@ class CreateTables extends Migration
             $table->unique(['post_id', 'tag_id']);
         });
 
+        Schema::create('wink_authors', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('slug')->unique();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->text('bio');
+            $table->string('avatar')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+
         Schema::create('wink_posts', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('slug')->unique();
@@ -39,19 +52,8 @@ class CreateTables extends Migration
             $table->dateTime('publish_date')->default('2018-10-10 00:00:00');
             $table->string('featured_image')->nullable();
             $table->string('featured_image_caption');
-            $table->uuid('author_id')->index();
-            $table->timestamps();
-        });
-
-        Schema::create('wink_authors', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->text('bio');
-            $table->string('avatar')->nullable();
-            $table->rememberToken();
+            $table->id('author_id')->index();
+            $table->foreign('author_id')->references('id')->on('wink_authors');
             $table->timestamps();
         });
 

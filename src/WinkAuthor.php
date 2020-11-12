@@ -39,14 +39,14 @@ class WinkAuthor extends AbstractWinkModel implements Authenticatable
      *
      * @var string
      */
-    protected $keyType = 'string';
+    protected $keyType = 'int';
 
     /**
      * Indicates if the IDs are auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
+    public $incrementing = true;
 
     /**
      * The column name of the "remember me" token.
