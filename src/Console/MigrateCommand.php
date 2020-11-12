@@ -47,7 +47,7 @@ class MigrateCommand extends Command
             $password = ! $this->argument('password') ? Str::random() : $this->argument('password');
 
             WinkAuthor::create([
-                'id' => (int) id(),
+                'id' => (int) Str::random(),
                 'name' => 'HERA Admin',
                 'slug' => 'hera-admin',
                 'bio' => 'HERA administration',

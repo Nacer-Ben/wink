@@ -40,7 +40,7 @@ class CreateTables extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        
+
         Schema::create('wink_posts', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('slug')->unique();
