@@ -88,6 +88,10 @@ class WinkServiceProvider extends ServiceProvider
             ], 'wink-assets');
 
             $this->publishes([
+                __DIR__.'/../database/migrations' => database_path('migrations'),
+            ], 'wink-migrations');
+
+            $this->publishes([
                 __DIR__.'/../config/wink.php' => config_path('wink.php'),
             ], 'wink-config');
         }

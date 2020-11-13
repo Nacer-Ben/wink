@@ -30,6 +30,9 @@ class InstallCommand extends Command
         $this->comment('Publishing Wink Assets...');
         $this->callSilent('vendor:publish', ['--tag' => 'wink-assets']);
 
+        $this->comment('Publishing Wink Migrations...');
+        $this->callSilent('vendor:publish', ['--tag' => 'wink-migrations']);
+
         $this->comment('Publishing Wink Configuration...');
         $this->callSilent('vendor:publish', ['--tag' => 'wink-config']);
 
