@@ -26,7 +26,7 @@ class AddMarkdownField extends Migration
     public function down()
     {
         Schema::table('wink_posts', function (Blueprint $table) {
-            $table->boolean('markdown')->default(false);
+            $table->dropColumn('markdown');
         });
     }
 }
