@@ -75,7 +75,7 @@ class CreateTables extends Migration
         Schema::dropIfExists('wink_tags');
         Schema::dropIfExists('wink_posts_tags');
         Schema::table('wink_posts', function (Blueprint $table) {
-            $table->dropColumn('author_id');
+            $table->dropForeign('posts_user_id_foreign'); // Drop foreign key 'user_id' from 'posts' table('author_id');
         });
         Schema::dropIfExists('wink_authors');
         Schema::dropIfExists('wink_posts');
