@@ -51,7 +51,7 @@ class CreateTables extends Migration
             $table->dateTime('publish_date')->default('2018-10-10 00:00:00');
             $table->string('featured_image')->nullable();
             $table->string('featured_image_caption');
-            $table->id('author_id')->index();
+            $table->id('author_id')->onDelete('cascade')->index();
             $table->foreign('author_id')->references('id')->on('wink_authors');
             $table->timestamps();
         });
@@ -75,7 +75,7 @@ class CreateTables extends Migration
         Schema::dropIfExists('wink_tags');
         Schema::dropIfExists('wink_posts_tags');
         Schema::table('wink_posts', function (Blueprint $table) {
-            $table->dropForeign('author_id'); // Drop foreign key 'user_id' from 'posts' table('author_id');
+            $table->dropForeign(['author_id']);
         });
         Schema::dropIfExists('wink_authors');
         Schema::dropIfExists('wink_posts');
