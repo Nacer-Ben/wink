@@ -3,6 +3,7 @@
 namespace Wink\Console;
 
 use Illuminate\Console\Command;
+use Wink\WinkAuthor;
 
 class InstallCommand extends Command
 {
@@ -37,5 +38,29 @@ class InstallCommand extends Command
         $this->callSilent('vendor:publish', ['--tag' => 'wink-config']);
 
         $this->info('Wink was installed successfully.');
+
+        $shouldCreateNewAuthor =
+            ! Schema::connection(config('wink.database_connection'))->hasTable('wink_authors') ||
+            ! WinkAuthor::count();
+
+        if ($shouldCreateNewAuthor) {
+            $email = ! $this->argument('email') ? 'admin@mail.com' : $this->argument('email');
+            $password = ! $this->argument('password') ? Str::random() : $this->argument('password');
+
+            WinkAuthor::create([
+                'id' => (int) Str::random(),
+                'name' => 'HERA Admin',
+                'slug' => 'hera-admin',
+                'bio' => 'HERA administration',
+                'email' => $email,
+                'password' => Hash::make($password),
+            ]);
+
+            $this->line('');
+            $this->line('');
+            $this->line('Wink is ready for use. Enjoy!');
+            $this->line('You may log in using <info>'.$email.'</info> and password: <info>'.$password.'</info>');
+
+        }
     }
 }
