@@ -3,6 +3,9 @@
 namespace Wink\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 use Wink\WinkAuthor;
 
 class InstallCommand extends Command
