@@ -72,6 +72,7 @@
         </div>
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <h1>Editors form</h1>
             @if ($errors->any())
                 <div class="font-semibold text-red mb-4">
                     @if ($errors->has('email'))
