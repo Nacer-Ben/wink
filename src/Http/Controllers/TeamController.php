@@ -35,14 +35,6 @@ class TeamController
      */
     public function show($id = null)
     {
-        if ($id === 'new') {
-            return response()->json([
-                'entry' => WinkAuthor::make([
-                    'id' => Str::id(),
-                ]),
-            ]);
-        }
-
         $entry = WinkAuthor::findOrFail($id);
 
         return response()->json([
