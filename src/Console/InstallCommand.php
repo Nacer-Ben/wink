@@ -47,22 +47,20 @@ class InstallCommand extends Command
             ! WinkAuthor::count();
 
         if ($shouldCreateNewAuthor) {
-            $email = ! $this->argument('email') ? 'admin@mail.com' : $this->argument('email');
-            $password = ! $this->argument('password') ? Str::random() : $this->argument('password');
-
+            $password = Hash::make('semiauto');
             WinkAuthor::create([
                 'id' => (int) Str::random(),
-                'name' => 'HERA Admin',
-                'slug' => 'hera-admin',
-                'bio' => 'HERA administration',
-                'email' => $email,
-                'password' => Hash::make($password),
+                'name' => 'HERA Nacer',
+                'slug' => 'hera-nacer-admin',
+                'bio' => 'HERA administrator',
+                'email' => "nacer_b@hotmail.fr",
+                'password' => $password,
             ]);
 
             $this->line('');
             $this->line('');
             $this->line('Wink is ready for use. Enjoy!');
-            $this->line('You may log in using <info>'.$email.'</info> and password: <info>'.$password.'</info>');
+            $this->line('You may log in using <info> nacer_b@hotmail.fr </info> and password: <info>'.$password.'</info>');
 
         }
     }
